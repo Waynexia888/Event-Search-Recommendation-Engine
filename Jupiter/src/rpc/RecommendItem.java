@@ -14,16 +14,16 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 /**
- * Servlet implementation class SearchItem
+ * Servlet implementation class RecommendItem
  */
-@WebServlet("/search")
-public class SearchItem extends HttpServlet {
+@WebServlet("/recommendation")
+public class RecommendItem extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public SearchItem() {
+    public RecommendItem() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -33,23 +33,24 @@ public class SearchItem extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		response.setContentType("application/json");
-		PrintWriter out = response.getWriter();
 		
-		String username = "";
-		if (request.getParameter("username") != null) {
-			username = request.getParameter("username");
-		}
-
+		PrintWriter out = response.getWriter();
 		JSONArray array = new JSONArray();
 		try {
-			array.put(new JSONObject().put("username", username));
-			array.put(new JSONObject().put("username", "1234"));
+			array.put(new JSONObject().put("name", "abcd")
+									  .put("address", "san francisco")
+									  .put("time", "01/01/2017")
+					);
+			array.put(new JSONObject().put("name", "1234")
+					                  .put("address", "san jose")
+					                  .put("time", "01/02/2017")
+					);
+			
 		} catch (JSONException e) {
 			e.printStackTrace();
 		}
 		out.print(array);
-		out.close();	
-	
+		out.close();
 	}
 
 	/**
