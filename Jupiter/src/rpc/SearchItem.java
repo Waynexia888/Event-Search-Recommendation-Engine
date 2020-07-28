@@ -32,8 +32,6 @@ public class SearchItem extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		response.setContentType("application/json");
-		PrintWriter out = response.getWriter();
 		
 		String username = "";
 		if (request.getParameter("username") != null) {
@@ -47,8 +45,7 @@ public class SearchItem extends HttpServlet {
 		} catch (JSONException e) {
 			e.printStackTrace();
 		}
-		out.print(array);
-		out.close();	
+		RpcHelper.writeJsonArray(response, array);
 	
 	}
 
