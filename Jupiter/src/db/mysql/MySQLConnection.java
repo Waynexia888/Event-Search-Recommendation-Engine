@@ -81,7 +81,43 @@ public class MySQLConnection implements DBConnection {
 
 	@Override
 	public void saveItem(Item item) {
-		// TODO Auto-generated method stub
+		if (conn == null) {
+			return;
+		}
+		
+		try {
+			// SQL injection
+			// Example:
+			// SELECT * FROM users WHERE username = '<username>' AND password = '<password>';
+			//
+			// sql = "SELECT * FROM users WHERE username = '" + username + "'
+			//       AND password = '" + password + "'"
+			//
+			// username: aoweifjoawefijwaoeifj
+			// password: 123456' OR '1' = '1
+			//
+			// SELECT * FROM users WHERE username = 'aoweifjoawefijwaoeifj' AND password = '123456' OR '1' = '1'
+			String sql = "INSERT IGNORE INTO items VALUES (?, ?, ?, ?, ?, ?, ?)";
+			PreparedStatement stmt = conn.prepareStatement(sql);
+			stmt.setString(1, item.getItemId());
+			stmt.setString(2, item.getName());
+			stmt.setDouble(3, item.getRating());
+			stmt.setString(4, item.getAddress());
+			stmt.setString(5, item.getImageUrl());
+			stmt.setString(6, item.getUrl());
+			stmt.setDouble(7, item.getDistance());
+			stmt.execute();
+			
+			sql = "INSERT IGNORE INTO categories VALUES (?, ?)";
+			stmt = conn.prepareStatement(sql);
+			for (String category : item.getCategories()) {
+				stmt.setString(1, item.getItemId());
+				stmt.setString(2, category);
+				stmt.execute();
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
 
 	}
 
