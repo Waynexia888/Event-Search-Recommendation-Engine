@@ -10,6 +10,7 @@ import java.util.Set;
 
 import db.DBConnection;
 import entity.Item;
+import external.TicketMasterAPI;
 
 public class MySQLConnection implements DBConnection {
 	private Connection conn;
@@ -69,8 +70,13 @@ public class MySQLConnection implements DBConnection {
 
 	@Override
 	public List<Item> searchItems(double lat, double lon, String term) {
-		// TODO Auto-generated method stub
-		return null;
+		TicketMasterAPI tmAPI = new TicketMasterAPI();
+		List<Item> items = tmAPI.search(lat, lon, term);
+		for (Item item : items) {
+			saveItem(item);
+		}
+		return items;
+
 	}
 
 	@Override
