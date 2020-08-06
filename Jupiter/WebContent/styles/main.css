@@ -22,7 +22,7 @@ ul {
 /* 2.1 header */
 .top-header {
 	align-items: center;
-	background: #DF574B;
+	background: #FFFFFF;
 	box-shadow: 0px 2px 10px #333333;
 	display: flex; 
 	height: 60px;
@@ -49,8 +49,8 @@ ul {
 } 
 
 .top-nav a {
-	color: #F9F9F9;
-	font-weight: 400;
+	color: #FFDF00;
+	font-weight: 800;
 	margin-left: 20px;
 	text-decoration: none;
 }
