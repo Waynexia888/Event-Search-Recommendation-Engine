@@ -17,9 +17,9 @@ TicketMaster API, whose purpose is to recommend events based on user's current g
 - Ajax
 - HTML/CSS
 
-## Logic Layer of Project
-![Logic Layer](/images/image1.png)<br/><br/><br/>
-
+## Overview of This Project
+![Logic Layer](/images/image3.png)<br/><br/><br/>
+![Logic Layer](/images/image4.png)<br/><br/><br/>
 ## Current Features
 - user can see nearby events based on their current location
 - user can like/unlick an event
