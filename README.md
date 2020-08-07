@@ -4,7 +4,8 @@ TicketMaster API, whose purpose is to recommend events based on user's current g
 
 [Project Demo](http://ec2-54-151-66-104.us-west-1.compute.amazonaws.com/Jupiter/)<br/>
 
-![main page](/images/image4.png)<br/><br/><br/>
+![main page](/images/image1.png)<br/><br/><br/>
+![main page](/images/image2.png)<br/><br/><br/>
 
 ## Technologies Used
 - Java Servlet
@@ -17,7 +18,7 @@ TicketMaster API, whose purpose is to recommend events based on user's current g
 - HTML/CSS
 
 ## Logic Layer of Project
-![Logic Layer](/images/image4.png)<br/><br/><br/>
+![Logic Layer](/images/image1.png)<br/><br/><br/>
 
 ## Current Features
 - user can see nearby events based on their current location
