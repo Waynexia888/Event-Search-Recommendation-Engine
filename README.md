@@ -1,7 +1,7 @@
 # Event-Search-Recommendation-Engine
 The project aims to use personalization to improve event search and recommendation. Event Search and Recommendation Engine is a full-stack project powered by TicketMaster API, whose purpose is to recommend events based on the user's current geolocation.
 
-[Project Demo](http://ec2-54-151-66-104.us-west-1.compute.amazonaws.com/Jupiter/)<br/>
+[Project Demo](http://ec2-52-53-185-15.us-west-1.compute.amazonaws.com/Jupiter/)<br/>
 
 ![main page](/images/image1.png)<br/><br/><br/>
 ![main page](/images/image2.png)<br/><br/><br/>
